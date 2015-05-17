@@ -1,0 +1,20 @@
+<header ng-include="'app/components/navbar/navbar.html'"></header>
+<div class="container">
+  <div>
+    <h3 class="text-muted">Example with mixins</h3>
+
+    <h3>Dogs</h3>
+    <span data-ng-if="sortField">Sorting by {{sortField}}
+    </span>
+    <table class="table">
+      <tr>
+        <th class="sortable" ng-click="sort('breed')">Breed</th>
+        <th class="sortable" ng-click="sort('name')">Name</th>
+      </tr>
+      <tr ng-repeat="pet in pets | orderBy:sortField">
+        <td>{{pet.breed}}</td>
+        <td>{{pet.name}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

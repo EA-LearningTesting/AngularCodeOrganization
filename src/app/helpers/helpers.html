@@ -1,0 +1,21 @@
+<header ng-include="'app/components/navbar/navbar.html'"></header>
+<div class="container">
+  <div>
+    <h3 class="text-muted">Example with helper object</h3>
+
+    <h3>Dogs</h3>
+    <span data-ng-if="sorter.sortField">Sorting by {{sorter.sortField}} |
+      <a href="" ng-click="sorter.resetSort()">Unsort</a>
+    </span>
+    <table class="table">
+      <tr>
+        <th class="sortable" ng-click="sorter.sort('breed')">Breed</th>
+        <th class="sortable" ng-click="sorter.sort(['breed', 'name'])">Name</th>
+      </tr>
+      <tr ng-repeat="pet in pets | orderBy:sorter.sortField">
+        <td>{{pet.breed}}</td>
+        <td>{{pet.name}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

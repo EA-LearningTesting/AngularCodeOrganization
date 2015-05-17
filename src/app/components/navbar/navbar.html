@@ -1,0 +1,23 @@
+<nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavbarCtrl">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <span class="glyphicon glyphicon-home"></span>
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li ng-class="{active: isActive('/')}"><a href="#/">Home</a></li>
+        <li ng-class="{active: isActive('/inheritance')}"><a ng-href="#/inheritance">Inheritance</a></li>
+        <li ng-class="{active: isActive('/mixins')}"><a ng-href="#/mixins">Mixins</a></li>
+        <li ng-class="{active: isActive('/helpers')}"><a ng-href="#/helpers">Helpers</a></li>
+        <li ng-class="{active: isActive('/controllers')}"><a ng-href="#/controllers">Controllers</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>Current date: {{ date | date:'yyyy-MM-dd' }}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

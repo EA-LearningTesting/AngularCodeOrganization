@@ -1,0 +1,27 @@
+<header ng-include="'app/components/navbar/navbar.html'"></header>
+<div class="container">
+  <h3 class="text-muted">Example with controller helper</h3>
+  <div>
+    <h3>Dogs</h3>
+    <table class="table">
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+      <tr ng-repeat="pet in pets | orderBy:sorter.sortField">
+        <td>{{pet.breed}}</td>
+        <td>{{pet.name}}</td>
+        <td>
+          <a href="" ng-click="walkerMgr.walk(pet)">walk</a>
+          <span ng-if="!walkerMgr.wasWalked(pet)">
+            (Not walked yet)</span>
+        </td>
+      </tr>
+    </table>
+    <ul class="list-unstyled">
+      <li ng-repeat="walk in walkerMgr.logs track by $index">
+        {{walk}}</li>
+    </ul>
+  </div>
+</div>
