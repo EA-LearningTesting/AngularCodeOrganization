@@ -1,6 +1,8 @@
 'use strict';
+angular.module('slDirectives', []);
 
-angular.module('ngconfMassive', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap'])
+
+angular.module('ngconfMassive', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap', 'slDirectives'])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
@@ -27,6 +29,10 @@ angular.module('ngconfMassive', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitiz
         url: '/mixins',
         templateUrl: 'app/mixins/mixins.html',
         controller: 'MixinsCtrl'
+      })
+      .state('cache', {
+        url: '/cache',
+        templateUrl: 'app/cache/cache.html'
       });
 
     $urlRouterProvider.otherwise('/');
